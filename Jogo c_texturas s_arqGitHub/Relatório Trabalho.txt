@@ -1,0 +1,34 @@
+INF01202 Algoritmos e Programação (Turmas E e F) - 2022/1
+RELATÓRIO TRABALHO FINAL
+
+Nomes: Anderson Hemicha Alcara e Henrique Lorentz Trein
+
+REPRESENTAÇÃO:
+Bibliotecas: stdio.h, stdlib.h, raylib.h e time.h
+Mapa: 11X27	
+Escala: todos os elementos do jogo utilizam a "#define ARESTA 20", ou seja, tanto tamanho do personagem, monstros, seres, poções, bombas(etc) possuem o tamanho de ARESTA * ARESTA, e quando se movimentam, utilizam uma movimentação discreta de 20 pixeis.
+Main: Na função principal, fica o laço de repetição responsável por manter a dinâmica de funcionamento como durante a execução pode e devem ocorrer mudanças de nível, carregamentos e salvamentos, menu, dinâmicas de vida, pontuação, bombas, movimentações de personagem e criaturas, portanto todos esses componentes devem permanecer dentro do laço. 
+Função desenhaJogo: responsável por atualizar toda a parte gráfica.
+Elem dinâmicos: monstros, seres e jogador, de estruturas MONSTROS e PERSONAGEM respectivamente, dentro da estrutura principal ESTADO.
+Elem estáticos: paredes e poções, de estruturas PAREDES e CONSUMIVEL respectivamente.
+Tanto elementos dinâmicos quanto estáticos tinham sua representação, nem que inicialmente, representadas por caracteres na matriz dos arquivos "nivelX.txt"
+Arquivo dadosSalvos.bin: arquivo que guarda todas as informações necessárias para salvar/carregar o último jogo. Nele, está toda a variável estadoCarregado do tipo estruturado ESTADO do último jogo salvo. Mas quando o jogo começa, ele já inicia essa estrutura de acordo com um novo jogo, somente se pressionado TAB + C é que o último jogo salvo será carregado.
+
+EXECUÇÃO DO JOGO:
+Para executar o jogo, o usuário deve manter o arquivo .exe no mesmo diretório que os arquivos .txt dos niveis (caso o usuário queira adicionar mais fases, basta criar novos arquivos .txt nomeados seguindo a ordem numérica no formato "nivelX" com x = o número da fase, no arquivo deve-se criar matrizes de 11x27 caracteres. Legenda: 'W'-parede indestrutível, 'D'-parede destrutível, 'P'-poção, 'J'-posição inicial do jogador, 'K'-posição inicial de um ser, 'M'-posição inicial de um monstro, ' '-espaço de deslocamento.), além disso deve-se manter a pasta "texturas" e o arquivo do tipo binário (.BIN) chamado "dadosSalvos", visando a possibilidade de salvar e carregar jogos. Ao abrir o executável, o usuário já é apresentado a primeira fase, se clicar TAB, poderá selecionar algumas opções, se optar por jogar diretamente, deverá passar por cima das criaturas azuis e fugir (ou explodir) as vermelhas. Para plantar as bombas, o usuário deverá pressionar 'B' e para se movimentar, poderá escolher entre a configuração "A-W-S-D" ou "setas". Para passar de fase, basta coletar todas as criaturas azuis daquele nível. O usuário conta somente com 3 vidas durante todo o percurso dos níveis, mas é possível ganhar mais a cada 1000 pontos. Por padrão, o jogo possui 3 níveis.
+
+
+ORGANIZAÇÃO:
+Anderson: organização/criação do repositório do trabalho no GitHub, relatório, seres/monstros (leitura no mapa, inicializações, movimentação(colisões, deslocamentos aleatórios))
+	  
+Henrique: estruturas, organização do código, estrutura principal do código, comentários
+	  texturas, arquivos (salvamento, carregamento, níveis), menu, movimentação do personagem, 
+	  bombas e explosões, captura de seres, dano/morte de monstros, velocidade dos seres/monstros,
+	  vida extra bônus, avanço de fase, modos de encerramento, perda de vida.
+	  
+
+DIFICULDADES:
+Captura de seres.
+Avanço de fase, que é dependente da captura dos seres.
+Movimentação de seres/monstros e velocidade dos mesmos.
+Monstros seguiam dando dano ao jogador mesmo depois de não estarem sendo representados graficamente.
