@@ -1,1 +1,2 @@
-# TrabalhoFinal para a disciplina de algoritmos e programação do curso de engenharia da computação da UFRGS
+#Jogo em C
+Jogo na linguagem C para a disciplina de Algoritmos e Programação da UFRGS
